@@ -13,8 +13,8 @@ public class OnlinePurchaseManager
   {
     /* to be implemented in part (a) */
     int count = 0;
-    for(int i = 0;i<purchases.size();i++){
-      if(purchase.get(i).isElectronic()==true&& purchases.get(i).getMaker()=="maker")
+    for(Gizmo g: purchases){
+      if(g.isElectronic()&& g.getMaker().equals(maker))
         count++;
     }
     return count;
@@ -25,8 +25,8 @@ public class OnlinePurchaseManager
   */
   public boolean hasAdjacentEqualPair(){
     /* to be implemented in part (b) */
-    for(int i = 1; i<purchases.size();i++){
-      if(purchases.get(i).equals(purchases.get(i-1))){
+    for(int i = 0; i<purchases.size()-1;i++){
+      if(purchases.get(i).equals(purchases.get(i+1))){
         return true;
       }
     }
